@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+// The model service definition.
+service Model {
+    // Sends a inference request
+    rpc Inference (InferenceRequest) returns (InferenceReply) {}
+}
+  
+// The request message containing the image.
+message InferenceRequest {
+    bytes image = 1;
+}
+  
+// The response message containing the prediction
+message InferenceReply {
+    string prediction = 1;
+}
