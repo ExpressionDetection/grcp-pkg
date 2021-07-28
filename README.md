@@ -8,6 +8,5 @@
 
 ## How to generate or update gRCP protobuffs
 
-* Install `grpcio-tools` globally by running `python -m pip install grpcio-tools`
-
-* Generate python gRPC code by running: `python -m grpc_tools.protoc  -I.\grcpPkg\protos --python_out=.\grcpPkg --grpc_python_out=.\grcpPkg .\grcpPkg\protos\server.proto`
+* Generate python gRPC code by running: `python3 -m grpc_tools.protoc  -I./grcppkg/protos --python_out=./grcppkg --grpc_python_out=./grcppkg ./grcppkg/protos/server.proto`
+    * Change `server_pb2_grpc.py` to use `from . import server_pb2 as server__pb2`
