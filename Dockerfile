@@ -14,8 +14,8 @@ RUN apt-get update && \
     curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python3 && \
     echo "source $HOME/.poetry/env" > ~/.bashrc
 
-WORKDIR /grcpPkg
+WORKDIR /grcp-pkg
 
-COPY . /grcpPkg
+COPY . /grcp-pkg
 
-CMD /grcpPkg/boot.sh
+CMD /grcp-pkg/boot.sh
