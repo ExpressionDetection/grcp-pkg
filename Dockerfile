@@ -16,6 +16,10 @@ RUN apt-get update && \
 
 WORKDIR /grcp-pkg
 
+COPY .ssh /root/.ssh
 COPY . /grcp-pkg
+
+# Install dependencies
+RUN source ~/.bashrc && poetry lock && poetry install --no-interaction --no-ansi
 
 CMD /grcp-pkg/boot.sh
